@@ -1,0 +1,39 @@
+.header-game {
+	background-color: $header-bg;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 12.8vh;
+	padding: 0 1em;
+}
+
+.game-nav {
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em;
+	margin: 0.125em auto;
+	width: 100%;
+	height: 100%;
+
+	div {
+		flex-basis: 24%;
+		text-align: center;
+	}
+}
+
+.game-title {
+	font-size: $font-size-md;
+	font-weight: $roboto-medium;
+}
+
+.restart-game {
+	font-weight: $roboto-medium;
+	color: $restart-bg;
+	cursor: pointer;
+	svg {
+		padding: 0.0625em;
+		margin-right: 0.25em;
+	}
+}

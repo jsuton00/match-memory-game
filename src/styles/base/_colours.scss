@@ -1,0 +1,11 @@
+//colour palette
+$silver: hsl(219, 2, 79);
+$mediumturquoise: hsl(181, 50, 54);
+$whitesmoke: hsl(220, 27, 95);
+$steelblue: hsl(207, 86, 40);
+
+//applying colours
+$card-back-side: $silver;
+$card-front-side: $mediumturquoise;
+$header-bg: $whitesmoke;
+$restart-bg: $steelblue;
