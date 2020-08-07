@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
+import {
+	faGem,
+	faPaperPlane,
+	faAnchor,
+	faBolt,
+	faCube,
+	faLeaf,
+	faBicycle,
+	faStar,
+} from "@fortawesome/free-solid-svg-icons";
 
 class App extends Component {
 	state = {
@@ -12,12 +22,18 @@ class App extends Component {
 	};
 
 	static duplicateCard = () => {
-		return [0, 1, 2, 3, 4, 5, 6, 7].reduce(
-			(preValue, current, index, array) => {
-				return preValue.concat([current, current]);
-			},
-			[],
-		);
+		return [
+			{ icon: faGem, colour: "#66d1d2" },
+			{ icon: faPaperPlane, colour: "#00aeef" },
+			{ icon: faAnchor, colour: "#9ac6e0" },
+			{ icon: faBolt, colour: "#0e6ebf" },
+			{ icon: faCube, colour: "#a2d2df" },
+			{ icon: faLeaf, colour: "#2ea44f" },
+			{ icon: faBicycle, colour: "#f99f00" },
+			{ icon: faStar, colour: "#733ad5" },
+		].reduce((preValue, current, index, array) => {
+			return preValue.concat([current, current]);
+		}, []);
 	};
 
 	handleClick = (event) => {
@@ -92,21 +108,24 @@ class App extends Component {
 		return (
 			<div id='game' className='game container-fluid'>
 				<Header restartGame={this.restartGame} />
-				<div id='game-container' className='game-container container-fluid'>
-					<div id='game-grid' className='game-grid container container-fluid'>
-						{this.state.shuffleCard.map((card, index) => {
-							return (
-								<Card
-									key={index}
-									id={index}
-									card={card}
-									isFlipped={this.state.isFlipped[index]}
-									clickHandler={this.handleClick}
-								/>
-							);
-						})}
+				<main id='game-play' className='game-play-area container-fluid'>
+					<div id='game-play-row' className='game-play-row row'>
+						<div id='game-grid' className='game-grid container'>
+							{this.state.shuffleCard.map((card, index) => {
+								return (
+									<Card
+										key={index}
+										id={index}
+										card={card.icon}
+										background={card.colour}
+										isFlipped={this.state.isFlipped[index]}
+										clickHandler={this.handleClick}
+									/>
+								);
+							})}
+						</div>
 					</div>
-				</div>
+				</main>
 			</div>
 		);
 	}

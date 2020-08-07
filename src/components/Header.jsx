@@ -8,11 +8,13 @@ export default function Header(props) {
 		<header id='header-game' className='header-game'>
 			<div id='game-nav-row' className='game-nav row'>
 				<div className='game-title'>Match Memory Game</div>
-				{/* <div className='timer'>Timer</div>
+				<div className='game-controls'>
+					{/* <div className='timer'>Timer</div>
 				<div className='game-status'>Status</div> */}
-				<div className='restart-game' onClick={restartGame}>
-					<FontAwesomeIcon icon={faRedoAlt} />
-					<span className='restart-game-text'>Restart</span>
+					<div className='restart-game' onClick={restartGame}>
+						<FontAwesomeIcon icon={faRedoAlt} />
+						<span className='restart-game-text'>Restart</span>
+					</div>
 				</div>
 			</div>
 		</header>
